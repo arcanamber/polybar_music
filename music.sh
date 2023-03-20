@@ -6,8 +6,10 @@
 #                            #
 ##############################
 
-player_status=$(playerctl --player=spotify status)
-if [ "$player_status" = "Playing" ]; then
+player_status=$(playerctl --player=spotify status 2>&1)
+if [[ "$player_status" =~ "No player found" ]]; then
+  echo "~"
+elif [ "$player_status" = "Playing" ]; then
   np=$(playerctl --player=spotify metadata --format "{{ title }} - {{ artist }} - {{ album }}")
   position=$(playerctl --player=spotify metadata --format '{{ position }}')
   position_minutes=$((position/1000000/60))
