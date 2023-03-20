@@ -1,9 +1,9 @@
 #!/bin/sh
 
 ##############################
-#			                 #
+#                            #
 # 2023 | https://electri.dev #
-#						     #
+#                            #
 ##############################
 
 player_status=$(playerctl --player=spotify status)
