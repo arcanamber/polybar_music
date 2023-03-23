@@ -8,11 +8,27 @@ Place this in ~/.config/polybar/config.ini:
 
 ```
 [module/music]
-type=custom/script
-exec=/path/to/script
-interval=1
+type = custom/script
+exec = /path/to/script
+interval = 1
 
-modules-center = music
+[module/toggle]
+type = custom/text
+content = "||"
+click-left = playerctl play-pause
+
+[module/rewind]
+type = custom/text
+content = "<-"
+click-left = playerctl previous
+
+[module/next]
+type = custom/text
+content = "->"
+click-left = playerctl next
+
+
+modules-center = music rewind toggle next
 ```
 
 "interval" updates the module every $interval seconds.  
