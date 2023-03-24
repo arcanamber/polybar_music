@@ -19,12 +19,12 @@ click-left = playerctl play-pause
 
 [module/rewind]
 type = custom/text
-content = "<-"
+content = "<<"
 click-left = playerctl previous
 
 [module/next]
 type = custom/text
-content = "->"
+content = ">>"
 click-left = playerctl next
 
 
